@@ -31,7 +31,7 @@ public class Player {
 				player.setBlueMana(blueWant);
 				for(int i = 1; i <= blueWant; i++){
 					int j= i -1;
-					A.getLands().get(j).setIsTapped(true);
+					A.getLands().get(j).setTapped(true);
 					
 				}
 			}else{
@@ -41,7 +41,7 @@ public class Player {
 				player.setRedMana(redWant);
 				for(int i = 1; i <= redWant; i++){
 					int j= i -1;
-					A.getLands().get(j).setIsTapped(true);
+					A.getLands().get(j).setTapped(true);
 				}
 			}else{
 				System.out.println("You do not have enough Lands for that.");
@@ -60,10 +60,10 @@ public class Player {
 		public String getName(){
 			return mName;
 		}
-		public Hand getHand(){
+		public CardCollection getHand(){
 			return mHand;
 		}
-		public List<Card> getLibrary(){
+		public CardCollection getLibrary(){
 			return mLibrary;
 		}
 		public int getTotalMana(){

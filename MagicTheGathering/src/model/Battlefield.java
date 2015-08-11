@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Battlefield {
-	List<Card> mLands = new ArrayList<>();
-	List<Card> mCreatures = new ArrayList<>();
-	List<Card> mEnchant = new ArrayList<>();
+	CardCollection mLands = new CardCollection();
+	CardCollection mCreatures = new CardCollection();
+	CardCollection mEnchant = new CardCollection();
 	private int mRedLand;
 	private int mBlueLand;
 	int mTotalUntapped;
-	public Battlefield(List<Card> lands, List<Card> creatures, List<Card> enchant ){
+	// TODO implement the lists for another player
+	public Battlefield(CardCollection lands, CardCollection creatures, CardCollection enchant ){
 		mLands = lands;
 		mCreatures = creatures;
 		mEnchant = enchant;
@@ -20,7 +21,7 @@ public class Battlefield {
 		mBlueLand = 0;
 		for(int i = 1; i <= A.getLands().size(); i++ ){
 			int j = i - 1;
-				if(A.getLands().get(j).getLandColour() == 2){
+				if(A.getLands().get(j).getColour() == 2){
 					mBlueLand++;
 				}
 		}	
@@ -61,22 +62,22 @@ public class Battlefield {
 	}
 	
 	// GETTERS AND SETTERS
-public List<Card> getCreatures() {
+public CardCollection getCreatures() {
 	return mCreatures;
 }
-public List<Card> getEnchant() {
+public CardCollection getEnchant() {
 	return mEnchant;
 }
-public List<Card> getLands() {
+public CardCollection getLands() {
 	return mLands;
 }
-public void setCreatures(List<Card> Creatures) {
+public void setCreatures(CardCollection Creatures) {
 	mCreatures = Creatures;
 }
-public void setEnchant(List<Card> Enchant) {
+public void setEnchant(CardCollection Enchant) {
 	mEnchant = Enchant;
 }
-public void setLands(List<Card> Lands) {
+public void setLands(CardCollection Lands) {
 	mLands = Lands;
 }
 }

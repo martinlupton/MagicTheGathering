@@ -4,9 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import model.Battlefield;
 import model.Card;
 import model.CardCollection;
 import model.CardGenerator;
+import model.Player;
 
 public class Main {
 
@@ -17,7 +19,15 @@ public class Main {
 		CardCollection allLands = new CardCollection();
 		CardCollection deck = new CardCollection();
 		CardCollection hand = new CardCollection();
-
+		// ADDED BY NICK, PROBABLY SHIT
+		String name = "Player 1";
+		Player player = new Player(name, hand, deck);
+		CardCollection BFLands = new CardCollection();
+		CardCollection BFCreatures = new CardCollection();
+		CardCollection BFEnchant = new CardCollection();
+		Battlefield BF = new Battlefield(BFLands, BFCreatures, BFEnchant);
+		
+		
 		allLands = generator.getLandCards();
 
 		for (int i = 0; i < 4; i++)

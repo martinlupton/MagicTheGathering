@@ -23,7 +23,9 @@ public class Land implements Card {
 	public String getName() {
 		return name;
 	}
-
+	public String getColour() {
+		return colour;
+}
 	@Override
 	public String getType() {
 		return type;
